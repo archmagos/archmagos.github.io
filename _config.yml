@@ -1,0 +1,60 @@
+site: archmagos.github.io
+url: https://archmagos.github.io
+title: archmagos.github.io
+description: #description
+googlewebfonts: Fira+Code:wght@400;500;700
+author:
+  name: #yourusername
+  avatar:
+  email: #youremail
+  url: #yoururl
+permalink: pretty
+
+baseurl: ""
+
+highlighter: rouge
+
+exclude:
+  - .jekyll-cache
+
+future: true
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:slug
+  
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

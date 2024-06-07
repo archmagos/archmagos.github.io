@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<section id="intro">
+  <div class="flex-row-between">
+    <h1>archmagos.github.io</h1>
+  </div>
+  <p>Questions? Refunds? <strong>a<!-- Comment -->rchmago<!-- Comment -->sgit<!-- Comment -->@<!-- Comment -->o<!-- Comment -->utlook.<!-- Comment -->com</strong></p>
+</section>
+
+<section class="posts">
+  <h1>Backlog</h1>
+  <ul>
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
