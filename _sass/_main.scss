@@ -152,6 +152,12 @@ b {
   color: var(--emphasis-color);
 }
 
+new-post {
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: var(--emphasis-color);
+}
+
 .photos ul {
   list-style: none;
 }

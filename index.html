@@ -11,10 +11,19 @@ layout: default
 
 <section class="posts">
   <h1>Backlog</h1>
+  {% assign min_date = site.time | date: "%s" | minus: 604800 %}
   <ul>
     {% for post in site.posts %}
+    {% assign post_date = post.date | date: "%s" | minus: 0 %}
       <li>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        {% if post_date > min_date %}
+          <div>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            <new-post>NEW</new-post>
+          </div>
+        {% else %}
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        {% endif %}
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
       </li>
     {% endfor %}
